@@ -36,7 +36,7 @@ const fetchAllUsers = callback => {
   .catch(e => console.log(e))
 }
 
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer({ typeDefs, resolvers, introspection: true })
 
 server.start().then(res => {
   server.applyMiddleware({ app, path: '/' })
